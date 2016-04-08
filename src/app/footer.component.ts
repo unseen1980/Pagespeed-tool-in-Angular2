@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 
 @Component({
-  selector: 'foot',
-  template: `
+    selector: 'foot',
+    template: `
         <footer class="page-footer teal lighten-2">
           <div class="footer-copyright">
             <div class="container">

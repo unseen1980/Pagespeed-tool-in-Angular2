@@ -7,15 +7,15 @@ import {FooterComponent} from './footer.component';
 import {PreloaderComponent} from './preloader.component';
 
 @Component({
-  selector: 'my-app',
-  template: `
+    selector: 'my-app',
+    template: `
   <header>
     <navbar></navbar>
   </header>
   <main style="min-height: 80%;">
     <div class="container">
         <div class="row" style="padding-top:3%">
-            <form class="col s6 offset-s3" 
+            <form class="col s8 offset-s2 m10 offset-m1" 
                 [hidden]="hasResults" (ngSubmit)="onSubmit(inputUrl)" *ngIf="!showPreloader">
                 <div class="row">
                     <div class="input-field">
@@ -36,34 +36,34 @@ import {PreloaderComponent} from './preloader.component';
    </main>
    <foot></foot>
   `,
-  directives: [ResultComponent, NavbarComponent, FooterComponent, PreloaderComponent],
-  providers: [PageSpeed]
+    directives: [ResultComponent, NavbarComponent, FooterComponent, PreloaderComponent],
+    providers: [PageSpeed]
 })
 
 export class AppComponent {
-  showPreloader = false;
-  hasResults = false;
-  readyResult = {};
-  constructor(public pageSpeed: PageSpeed) {
-  }
-  onSubmit(url) {
-    let urlVal = url.value;
-    this.showPreloader = true;
-    this.pageSpeed.getResult(urlVal)
-      .subscribe(
-      (data) => {
-        console.log(data);
-        this.showPreloader = false;
-        this.hasResults = true;
-        this.readyResult = data;
-      },
-      (err) => {
-        console.log(err);
-      },
-      () => {
-        console.log('Result Complete');
-      }
-      );
-    url.value = '';
-  }
+    showPreloader = false;
+    hasResults = false;
+    readyResult = {};
+    constructor(public pageSpeed: PageSpeed) {
+    }
+    onSubmit(url) {
+        let urlVal = url.value;
+        this.showPreloader = true;
+        this.pageSpeed.getResult(urlVal)
+            .subscribe(
+            (data) => {
+                console.log(data);
+                this.showPreloader = false;
+                this.hasResults = true;
+                this.readyResult = data;
+            },
+            (err) => {
+                console.log(err);
+            },
+            () => {
+                console.log('Result Complete');
+            }
+            );
+        url.value = '';
+    }
 }

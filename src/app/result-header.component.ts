@@ -1,8 +1,8 @@
 import {Component, Input} from 'angular2/core';
 
 @Component({
-  selector: 'result-header',
-  template: `
+    selector: 'result-header',
+    template: `
         <h4>{{heading}}</h4>
         <blockquote>
             {{pagetitle}}
@@ -13,6 +13,6 @@ import {Component, Input} from 'angular2/core';
 export class ResultHeaderComponent {
     @Input() heading;
     @Input() pagetitle;
-    constructor() {
+    ngOnInit() {
     }
 }

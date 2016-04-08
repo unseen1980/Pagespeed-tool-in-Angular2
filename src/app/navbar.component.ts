@@ -1,11 +1,12 @@
 import {Component} from 'angular2/core';
 
 @Component({
-  selector: 'navbar',
-  template: `
+    selector: 'navbar',
+    template: `
     <nav>
     <div class="nav-wrapper teal lighten-2">
-      <a href="#!" class="brand-logo">Seotrimo</a>
+      <a href="/" class="brand-logo">Seotrimo
+      </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">About</a></li>
