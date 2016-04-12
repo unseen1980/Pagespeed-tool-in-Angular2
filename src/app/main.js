@@ -1,4 +1,4 @@
-/// <reference path="../../node_modules/angular2/typings/browser.d.ts" />
+form/// <reference path="../../node_modules/angular2/typings/browser.d.ts" />
 System.register(['angular2/platform/browser', 'angular2/http', './app.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
