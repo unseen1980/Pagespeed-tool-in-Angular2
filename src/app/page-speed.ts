@@ -8,10 +8,18 @@ export class PageSpeed {
   private _urlEndpoint = 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=http%3A%2F%2F';
   constructor(private _http: Http) { };
 
-  getResult(query) {
+  reqResult(query) {
     return this._http
       .get(this._urlEndpoint + query)
       .map(res => res.json());
+  }
+
+  getResult() {
+    return this.result;
+  }
+
+  setResult(res) {
+    this.result = res;
   }
 
   resetResult() {

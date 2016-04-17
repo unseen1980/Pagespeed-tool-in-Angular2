@@ -1,7 +1,8 @@
 import { Component} from 'angular2/core';
-import {ResultComponent} from './result';
+import {ResultComponent} from './result.component';
 import {PreloaderComponent} from './preloader.component';
 import {PageSpeed} from './page-speed';
+import {Router, RouteConfig, RouterOutlet} from 'angular2/router';
 
 @Component({
     selector: 'home',
@@ -9,8 +10,7 @@ import {PageSpeed} from './page-speed';
     <main style="min-height: 80%;">
         <div class="container">
             <div class="row" style="padding-top:3%">
-                <form class="col s8 offset-s2 m10 offset-m1" 
-                    [hidden]="hasResults" 
+                <form class="col s8 offset-s2 m10 offset-m1"
                     (ngSubmit)="onSubmit(inputUrl)" 
                     *ngIf="!showPreloader">
                     <div class="row">
@@ -26,30 +26,25 @@ import {PageSpeed} from './page-speed';
                 <div class="col s2 offset-s5">
                     <preloader *ngIf="showPreloader"></preloader>
                 </div>
-                <result [res]="readyResult"></result>
             </div>
         </div>
     </main>
     `,
-    directives: [ResultComponent, PreloaderComponent],
-    providers: [PageSpeed]
+    directives: [ResultComponent, PreloaderComponent]
 })
 export class HomeComponent {
     showPreloader = false;
-    hasResults = false;
-    readyResult = {};
-    constructor(private _pageSpeed: PageSpeed) {
+    constructor(private _pageSpeed: PageSpeed, private _router: Router) {
     }
     onSubmit(url) {
         let urlVal = url.value.replace('http://', '').replace('https://', '');
         this.showPreloader = true;
-        this._pageSpeed.getResult(urlVal)
+        this._pageSpeed.reqResult(urlVal)
             .subscribe(
             (data) => {
-                console.log(data);
                 this.showPreloader = false;
-                this.hasResults = true;
-                this.readyResult = data;
+                this._pageSpeed.setResult(data);
+                this._router.navigate(['Result']);
             },
             (err) => {
                 console.log(err);

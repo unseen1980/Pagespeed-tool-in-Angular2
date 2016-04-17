@@ -6,8 +6,7 @@ import {RouterLink} from 'angular2/router';
     template: `
     <nav>
         <div class="nav-wrapper teal lighten-2">
-            <a [routerLink]="['Home']" class="brand-logo">Seotrimo</a>
-            
+            <a class="brand-logo">Seotrimo</a>            
         </div>
     </nav>
   `,
