@@ -1,7 +1,7 @@
 import { Component} from 'angular2/core';
 import {ResultComponent} from './result.component';
 import {PreloaderComponent} from './preloader.component';
-import {PageSpeed} from './page-speed';
+import {PageSpeed} from './services/page-speed.service';
 import {Router, RouteConfig, RouterOutlet} from 'angular2/router';
 
 @Component({

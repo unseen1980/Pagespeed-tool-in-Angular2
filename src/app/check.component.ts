@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import {Router, RouteConfig, RouterOutlet} from 'angular2/router';
-import {ResultComponent} from './result';
+import {ResultComponent} from './result.component';
 import {HomeComponent} from './home.component';
 
 @RouteConfig([
