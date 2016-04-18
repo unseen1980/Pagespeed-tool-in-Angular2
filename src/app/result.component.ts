@@ -1,7 +1,7 @@
 import {Component, Input} from 'angular2/core';
 import {ResultHeaderComponent} from './result-header.component';
 import {PageResultsStatsComponent} from './page-result-stats.component';
-import {PageSpeed} from './page-speed';
+import {PageSpeed} from './services/page-speed.service';
 
 
 @Component({

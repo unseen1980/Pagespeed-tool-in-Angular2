@@ -5,7 +5,7 @@ import {ContactComponent} from './contact.component';
 import {HomeComponent} from './home.component';
 import {CheckComponent} from './check.component';
 import {RouteConfig, RouterOutlet} from 'angular2/router';
-import {PageSpeed} from './page-speed';
+import {PageSpeed} from './services/page-speed.service';
 
 
 @RouteConfig([
