@@ -1,10 +1,10 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {NavbarComponent} from './navbar.component';
 import {FooterComponent} from './footer.component';
 import {ContactComponent} from './contact.component';
 import {HomeComponent} from './home.component';
 import {CheckComponent} from './check.component';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
+import {RouteConfig, RouterOutlet} from '@angular/router-deprecated';
 import {PageSpeed} from '../services/page-speed.service';
 
 

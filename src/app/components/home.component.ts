@@ -1,8 +1,8 @@
-import { Component} from 'angular2/core';
+import { Component} from '@angular/core';
 import {ResultComponent} from './result.component';
 import {PreloaderComponent} from './preloader.component';
 import {PageSpeed} from '../services/page-speed.service';
-import {Router, RouteConfig, RouterOutlet} from 'angular2/router';
+import {Router, RouteConfig, RouterOutlet} from '@angular/router-deprecated';
 
 @Component({
     selector: 'home',

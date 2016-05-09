@@ -1,8 +1,8 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input} from '@angular/core';
 import {ResultHeaderComponent} from './result-header.component';
 import {PageResultsStatsComponent} from './page-result-stats.component';
 import {PageSpeed} from '../services/page-speed.service';
-import {Router, RouteConfig, RouterOutlet} from 'angular2/router';
+import {Router, RouteConfig, RouterOutlet} from '@angular/router-deprecated';
 
 @Component({
     selector: 'result',

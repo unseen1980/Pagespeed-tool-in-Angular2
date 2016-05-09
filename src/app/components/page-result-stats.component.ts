@@ -1,4 +1,4 @@
-import { Component, Input } from 'angular2/core';
+import { Component, Input } from '@angular/core';
 import { ValuesPipe } from '../pipes/obj-loop.pipe';
 import { KeysPipe } from '../pipes/obj-to-array.pipe';
 import { ByteConversionPipe } from '../pipes/byte-conversion.pipe';
